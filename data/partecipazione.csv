@@ -1,0 +1,261 @@
+Territorio;Anno;Valore
+Piemonte;2004;66.4
+Piemonte;2005;66.8
+Piemonte;2006;67.2
+Piemonte;2007;67.9
+Piemonte;2008;67.5
+Piemonte;2009;66.3
+Piemonte;2010;66.1
+Piemonte;2011;66.5
+Piemonte;2012;66.3
+Piemonte;2013;65.8
+Piemonte;2014;65.4
+Piemonte;2015;65.9
+Piemonte;2016;66.2
+Valle d'Aosta;2004;67.1
+Valle d'Aosta;2005;67.5
+Valle d'Aosta;2006;68.0
+Valle d'Aosta;2007;68.6
+Valle d'Aosta;2008;68.3
+Valle d'Aosta;2009;67.5
+Valle d'Aosta;2010;67.2
+Valle d'Aosta;2011;67.8
+Valle d'Aosta;2012;67.4
+Valle d'Aosta;2013;67.1
+Valle d'Aosta;2014;66.9
+Valle d'Aosta;2015;67.3
+Valle d'Aosta;2016;67.5
+Liguria;2004;64.8
+Liguria;2005;65.1
+Liguria;2006;65.5
+Liguria;2007;65.9
+Liguria;2008;65.7
+Liguria;2009;64.8
+Liguria;2010;64.6
+Liguria;2011;65.0
+Liguria;2012;64.7
+Liguria;2013;64.2
+Liguria;2014;63.9
+Liguria;2015;64.3
+Liguria;2016;64.6
+Lombardia;2004;68.2
+Lombardia;2005;68.6
+Lombardia;2006;69.1
+Lombardia;2007;69.7
+Lombardia;2008;69.5
+Lombardia;2009;68.3
+Lombardia;2010;68.1
+Lombardia;2011;68.6
+Lombardia;2012;68.3
+Lombardia;2013;67.8
+Lombardia;2014;67.5
+Lombardia;2015;68.0
+Lombardia;2016;68.4
+Trentino-Alto Adige;2004;68.5
+Trentino-Alto Adige;2005;68.9
+Trentino-Alto Adige;2006;69.3
+Trentino-Alto Adige;2007;70.0
+Trentino-Alto Adige;2008;69.8
+Trentino-Alto Adige;2009;68.9
+Trentino-Alto Adige;2010;68.7
+Trentino-Alto Adige;2011;69.2
+Trentino-Alto Adige;2012;69.0
+Trentino-Alto Adige;2013;68.6
+Trentino-Alto Adige;2014;68.3
+Trentino-Alto Adige;2015;68.7
+Trentino-Alto Adige;2016;69.0
+Veneto;2004;67.8
+Veneto;2005;68.2
+Veneto;2006;68.6
+Veneto;2007;69.2
+Veneto;2008;69.0
+Veneto;2009;67.9
+Veneto;2010;67.7
+Veneto;2011;68.1
+Veneto;2012;67.8
+Veneto;2013;67.3
+Veneto;2014;67.1
+Veneto;2015;67.6
+Veneto;2016;68.0
+Friuli-Venezia Giulia;2004;66.1
+Friuli-Venezia Giulia;2005;66.5
+Friuli-Venezia Giulia;2006;66.9
+Friuli-Venezia Giulia;2007;67.4
+Friuli-Venezia Giulia;2008;67.1
+Friuli-Venezia Giulia;2009;66.2
+Friuli-Venezia Giulia;2010;66.0
+Friuli-Venezia Giulia;2011;66.4
+Friuli-Venezia Giulia;2012;66.2
+Friuli-Venezia Giulia;2013;65.7
+Friuli-Venezia Giulia;2014;65.4
+Friuli-Venezia Giulia;2015;65.9
+Friuli-Venezia Giulia;2016;66.2
+Emilia-Romagna;2004;69.0
+Emilia-Romagna;2005;69.5
+Emilia-Romagna;2006;70.0
+Emilia-Romagna;2007;70.6
+Emilia-Romagna;2008;70.4
+Emilia-Romagna;2009;69.5
+Emilia-Romagna;2010;69.3
+Emilia-Romagna;2011;69.7
+Emilia-Romagna;2012;69.5
+Emilia-Romagna;2013;69.0
+Emilia-Romagna;2014;68.8
+Emilia-Romagna;2015;69.3
+Emilia-Romagna;2016;69.7
+Toscana;2004;65.3
+Toscana;2005;65.7
+Toscana;2006;66.1
+Toscana;2007;66.7
+Toscana;2008;66.4
+Toscana;2009;65.5
+Toscana;2010;65.3
+Toscana;2011;65.8
+Toscana;2012;65.5
+Toscana;2013;65.0
+Toscana;2014;64.8
+Toscana;2015;65.2
+Toscana;2016;65.5
+Umbria;2004;63.2
+Umbria;2005;63.6
+Umbria;2006;64.0
+Umbria;2007;64.5
+Umbria;2008;64.2
+Umbria;2009;63.3
+Umbria;2010;63.1
+Umbria;2011;63.5
+Umbria;2012;63.2
+Umbria;2013;62.7
+Umbria;2014;62.4
+Umbria;2015;62.8
+Umbria;2016;63.1
+Marche;2004;64.5
+Marche;2005;64.9
+Marche;2006;65.3
+Marche;2007;65.9
+Marche;2008;65.6
+Marche;2009;64.8
+Marche;2010;64.6
+Marche;2011;65.0
+Marche;2012;64.7
+Marche;2013;64.2
+Marche;2014;63.9
+Marche;2015;64.4
+Marche;2016;64.7
+Lazio;2004;61.8
+Lazio;2005;62.2
+Lazio;2006;62.6
+Lazio;2007;63.2
+Lazio;2008;63.0
+Lazio;2009;62.1
+Lazio;2010;61.9
+Lazio;2011;62.3
+Lazio;2012;62.0
+Lazio;2013;61.5
+Lazio;2014;61.2
+Lazio;2015;61.6
+Lazio;2016;62.0
+Abruzzo;2004;58.4
+Abruzzo;2005;58.8
+Abruzzo;2006;59.2
+Abruzzo;2007;59.8
+Abruzzo;2008;59.5
+Abruzzo;2009;58.6
+Abruzzo;2010;58.3
+Abruzzo;2011;58.7
+Abruzzo;2012;58.4
+Abruzzo;2013;57.9
+Abruzzo;2014;57.6
+Abruzzo;2015;58.0
+Abruzzo;2016;58.3
+Molise;2004;52.1
+Molise;2005;52.4
+Molise;2006;52.8
+Molise;2007;53.3
+Molise;2008;53.0
+Molise;2009;52.2
+Molise;2010;52.0
+Molise;2011;52.4
+Molise;2012;52.1
+Molise;2013;51.6
+Molise;2014;51.2
+Molise;2015;51.6
+Molise;2016;51.9
+Campania;2004;46.3
+Campania;2005;46.6
+Campania;2006;47.0
+Campania;2007;47.5
+Campania;2008;47.1
+Campania;2009;46.2
+Campania;2010;45.8
+Campania;2011;46.1
+Campania;2012;45.7
+Campania;2013;45.1
+Campania;2014;44.7
+Campania;2015;44.9
+Campania;2016;45.2
+Puglia;2004;48.7
+Puglia;2005;49.0
+Puglia;2006;49.4
+Puglia;2007;49.9
+Puglia;2008;49.5
+Puglia;2009;48.7
+Puglia;2010;48.4
+Puglia;2011;48.7
+Puglia;2012;48.3
+Puglia;2013;47.7
+Puglia;2014;47.3
+Puglia;2015;47.7
+Puglia;2016;48.0
+Basilicata;2004;50.2
+Basilicata;2005;50.5
+Basilicata;2006;50.9
+Basilicata;2007;51.4
+Basilicata;2008;51.1
+Basilicata;2009;50.3
+Basilicata;2010;50.0
+Basilicata;2011;50.4
+Basilicata;2012;50.1
+Basilicata;2013;49.6
+Basilicata;2014;49.2
+Basilicata;2015;49.6
+Basilicata;2016;49.9
+Calabria;2004;47.1
+Calabria;2005;47.4
+Calabria;2006;47.8
+Calabria;2007;48.3
+Calabria;2008;47.9
+Calabria;2009;47.1
+Calabria;2010;46.8
+Calabria;2011;47.1
+Calabria;2012;46.7
+Calabria;2013;46.1
+Calabria;2014;45.7
+Calabria;2015;46.1
+Calabria;2016;46.4
+Sicilia;2004;49.5
+Sicilia;2005;49.8
+Sicilia;2006;50.2
+Sicilia;2007;50.7
+Sicilia;2008;50.3
+Sicilia;2009;49.5
+Sicilia;2010;49.2
+Sicilia;2011;49.5
+Sicilia;2012;49.1
+Sicilia;2013;48.5
+Sicilia;2014;48.1
+Sicilia;2015;48.5
+Sicilia;2016;48.8
+Sardegna;2004;53.8
+Sardegna;2005;54.1
+Sardegna;2006;54.5
+Sardegna;2007;55.0
+Sardegna;2008;54.7
+Sardegna;2009;53.9
+Sardegna;2010;53.6
+Sardegna;2011;54.0
+Sardegna;2012;53.7
+Sardegna;2013;53.2
+Sardegna;2014;52.8
+Sardegna;2015;53.2
+Sardegna;2016;53.5

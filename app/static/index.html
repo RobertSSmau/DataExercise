@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>FSD Esame 2024 — Mercato del lavoro IT</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
+  header { background: #2c3e50; color: white; padding: 16px 24px; }
+  header h1 { font-size: 1.3rem; }
+  header p { font-size: 0.85rem; margin-top: 4px; opacity: 0.8; }
+  main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+  .card { background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,.1); padding: 20px; margin-bottom: 20px; }
+  .controls { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+  .ctrl-group { display: flex; flex-direction: column; gap: 4px; }
+  label { font-size: 12px; font-weight: bold; color: #666; }
+  select, input[type=number] { padding: 8px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; }
+  select { min-width: 280px; }
+  button { padding: 9px 18px; background: #2c3e50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+  button:hover { background: #34495e; }
+  #status { font-size: 13px; color: #888; margin-top: 8px; min-height: 18px; }
+  canvas { max-height: 420px; }
+  .api-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .api-links a { font-size: 13px; color: #2c3e50; text-decoration: none; border: 1px solid #ccc; padding: 4px 10px; border-radius: 4px; }
+  .api-links a:hover { background: #eee; }
+</style>
+</head>
+<body>
+<header>
+  <h1>FSD Esame 2024 — Mercato del lavoro in Italia</h1>
+  <p>Dati regionali: partecipazione mercato lavoro · sopravvivenza imprese · spesa R&amp;S</p>
+</header>
+<main>
+  <div class="card">
+    <div class="controls">
+      <div class="ctrl-group">
+        <label for="serie">Serie calcolata</label>
+        <select id="serie">
+          <option value="/api/serie/partecipazione/aree">1. Partecipazione lavoro — 5 Aree</option>
+          <option value="/api/serie/partecipazione/nazionale">2. Partecipazione lavoro — Nazionale</option>
+          <option value="/api/serie/ricerca/aree">3. Incidenza spesa R&amp;S — 5 Aree</option>
+          <option value="/api/serie/sopravvivenza/nazionale">4. Sopravvivenza imprese — Nazionale</option>
+          <option value="/api/serie/sopravvivenza/aree">5. Sopravvivenza imprese — 5 Aree</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label for="da">Da anno</label>
+        <input id="da" type="number" value="2004" min="1990" max="2030" style="width:90px">
+      </div>
+      <div class="ctrl-group">
+        <label for="a">A anno</label>
+        <input id="a" type="number" value="2022" min="1990" max="2030" style="width:90px">
+      </div>
+      <button id="go">Carica</button>
+    </div>
+    <div id="status"></div>
+  </div>
+
+  <div class="card">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div class="card">
+    <p style="font-size:13px;margin-bottom:10px;font-weight:bold;">Link rapidi API (Swagger)</p>
+    <div class="api-links">
+      <a href="/docs" target="_blank">📄 Swagger UI</a>
+      <a href="/api/partecipazione?da_anno=2010&a_anno=2020" target="_blank">/api/partecipazione</a>
+      <a href="/api/sopravvivenza?da_anno=2010&a_anno=2020" target="_blank">/api/sopravvivenza</a>
+      <a href="/api/ricerca?da_anno=2010&a_anno=2020" target="_blank">/api/ricerca</a>
+      <a href="/api/serie/partecipazione/aree?da_anno=2010&a_anno=2020" target="_blank">/api/serie/partecipazione/aree</a>
+      <a href="/api/serie/partecipazione/nazionale?da_anno=2010&a_anno=2020" target="_blank">/api/serie/partecipazione/nazionale</a>
+    </div>
+  </div>
+</main>
+
+<script>
+const COLORS = ['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b'];
+let chart = null;
+
+async function carica() {
+  const endpoint = document.getElementById('serie').value;
+  const da = document.getElementById('da').value;
+  const a  = document.getElementById('a').value;
+  const status = document.getElementById('status');
+
+  if (parseInt(a) < parseInt(da)) {
+    status.textContent = 'Errore: "A anno" deve essere >= "Da anno"';
+    status.style.color = '#c0392b';
+    return;
+  }
+
+  status.textContent = 'Caricamento...';
+  status.style.color = '#888';
+
+  try {
+    const url = `${endpoint}?da_anno=${da}&a_anno=${a}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.detail || res.statusText);
+    }
+    const dati = await res.json();
+    if (dati.length === 0) {
+      status.textContent = 'Nessun dato disponibile per il range selezionato.';
+      return;
+    }
+    renderChart(dati);
+    status.textContent = `${dati.length} record caricati da ${url}`;
+    status.style.color = '#27ae60';
+  } catch (e) {
+    status.textContent = 'Errore: ' + e.message;
+    status.style.color = '#c0392b';
+  }
+}
+
+function renderChart(dati) {
+  const perGruppo = {};
+  for (const r of dati) {
+    const k = r.area ?? 'Nazionale';
+    (perGruppo[k] = perGruppo[k] ?? []).push({ x: r.anno, y: r.valore });
+  }
+  const anniSet = new Set();
+  Object.values(perGruppo).forEach(arr => arr.forEach(p => anniSet.add(p.x)));
+  const anni = [...anniSet].sort((a, b) => a - b);
+
+  const datasets = Object.entries(perGruppo).map(([k, pts], i) => ({
+    label: k,
+    data: anni.map(a => pts.find(p => p.x === a)?.y ?? null),
+    borderColor: COLORS[i % COLORS.length],
+    backgroundColor: COLORS[i % COLORS.length] + '22',
+    spanGaps: true,
+    tension: 0.25,
+    pointRadius: 3,
+    borderWidth: 2,
+  }));
+
+  const label = document.getElementById('serie').options[document.getElementById('serie').selectedIndex].text;
+
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById('chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: anni, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: label, font: { size: 14 } },
+        legend: { position: 'bottom' },
+      },
+      scales: {
+        y: { title: { display: true, text: 'Valore (%)' } },
+        x: { title: { display: true, text: 'Anno' } },
+      },
+    },
+  });
+}
+
+document.getElementById('go').addEventListener('click', carica);
+carica();
+</script>
+</body>
+</html>

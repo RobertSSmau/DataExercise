@@ -1,0 +1,261 @@
+Territorio;Anno;Valore
+Piemonte;2004;0.68
+Piemonte;2005;0.70
+Piemonte;2006;0.72
+Piemonte;2007;0.75
+Piemonte;2008;0.74
+Piemonte;2009;0.71
+Piemonte;2010;0.70
+Piemonte;2011;0.73
+Piemonte;2012;0.75
+Piemonte;2013;0.74
+Piemonte;2014;0.76
+Piemonte;2015;0.78
+Piemonte;2016;0.80
+Valle d'Aosta;2004;0.12
+Valle d'Aosta;2005;0.13
+Valle d'Aosta;2006;0.13
+Valle d'Aosta;2007;0.14
+Valle d'Aosta;2008;0.14
+Valle d'Aosta;2009;0.13
+Valle d'Aosta;2010;0.13
+Valle d'Aosta;2011;0.14
+Valle d'Aosta;2012;0.14
+Valle d'Aosta;2013;0.14
+Valle d'Aosta;2014;0.15
+Valle d'Aosta;2015;0.15
+Valle d'Aosta;2016;0.16
+Liguria;2004;0.42
+Liguria;2005;0.43
+Liguria;2006;0.44
+Liguria;2007;0.46
+Liguria;2008;0.45
+Liguria;2009;0.43
+Liguria;2010;0.43
+Liguria;2011;0.44
+Liguria;2012;0.45
+Liguria;2013;0.45
+Liguria;2014;0.46
+Liguria;2015;0.47
+Liguria;2016;0.48
+Lombardia;2004;0.87
+Lombardia;2005;0.89
+Lombardia;2006;0.91
+Lombardia;2007;0.95
+Lombardia;2008;0.94
+Lombardia;2009;0.90
+Lombardia;2010;0.89
+Lombardia;2011;0.92
+Lombardia;2012;0.95
+Lombardia;2013;0.94
+Lombardia;2014;0.96
+Lombardia;2015;0.99
+Lombardia;2016;1.02
+Trentino-Alto Adige;2004;0.55
+Trentino-Alto Adige;2005;0.57
+Trentino-Alto Adige;2006;0.58
+Trentino-Alto Adige;2007;0.61
+Trentino-Alto Adige;2008;0.60
+Trentino-Alto Adige;2009;0.58
+Trentino-Alto Adige;2010;0.57
+Trentino-Alto Adige;2011;0.59
+Trentino-Alto Adige;2012;0.61
+Trentino-Alto Adige;2013;0.60
+Trentino-Alto Adige;2014;0.62
+Trentino-Alto Adige;2015;0.64
+Trentino-Alto Adige;2016;0.66
+Veneto;2004;0.63
+Veneto;2005;0.65
+Veneto;2006;0.67
+Veneto;2007;0.70
+Veneto;2008;0.69
+Veneto;2009;0.66
+Veneto;2010;0.65
+Veneto;2011;0.68
+Veneto;2012;0.70
+Veneto;2013;0.69
+Veneto;2014;0.71
+Veneto;2015;0.73
+Veneto;2016;0.75
+Friuli-Venezia Giulia;2004;0.52
+Friuli-Venezia Giulia;2005;0.54
+Friuli-Venezia Giulia;2006;0.55
+Friuli-Venezia Giulia;2007;0.58
+Friuli-Venezia Giulia;2008;0.57
+Friuli-Venezia Giulia;2009;0.54
+Friuli-Venezia Giulia;2010;0.54
+Friuli-Venezia Giulia;2011;0.56
+Friuli-Venezia Giulia;2012;0.58
+Friuli-Venezia Giulia;2013;0.57
+Friuli-Venezia Giulia;2014;0.59
+Friuli-Venezia Giulia;2015;0.61
+Friuli-Venezia Giulia;2016;0.63
+Emilia-Romagna;2004;0.78
+Emilia-Romagna;2005;0.80
+Emilia-Romagna;2006;0.82
+Emilia-Romagna;2007;0.86
+Emilia-Romagna;2008;0.85
+Emilia-Romagna;2009;0.81
+Emilia-Romagna;2010;0.80
+Emilia-Romagna;2011;0.83
+Emilia-Romagna;2012;0.86
+Emilia-Romagna;2013;0.85
+Emilia-Romagna;2014;0.87
+Emilia-Romagna;2015;0.89
+Emilia-Romagna;2016;0.92
+Toscana;2004;0.45
+Toscana;2005;0.46
+Toscana;2006;0.47
+Toscana;2007;0.50
+Toscana;2008;0.49
+Toscana;2009;0.47
+Toscana;2010;0.46
+Toscana;2011;0.48
+Toscana;2012;0.50
+Toscana;2013;0.49
+Toscana;2014;0.51
+Toscana;2015;0.53
+Toscana;2016;0.55
+Umbria;2004;0.22
+Umbria;2005;0.23
+Umbria;2006;0.24
+Umbria;2007;0.25
+Umbria;2008;0.24
+Umbria;2009;0.23
+Umbria;2010;0.23
+Umbria;2011;0.24
+Umbria;2012;0.25
+Umbria;2013;0.24
+Umbria;2014;0.25
+Umbria;2015;0.26
+Umbria;2016;0.27
+Marche;2004;0.35
+Marche;2005;0.36
+Marche;2006;0.37
+Marche;2007;0.39
+Marche;2008;0.38
+Marche;2009;0.36
+Marche;2010;0.36
+Marche;2011;0.37
+Marche;2012;0.39
+Marche;2013;0.38
+Marche;2014;0.40
+Marche;2015;0.41
+Marche;2016;0.43
+Lazio;2004;0.58
+Lazio;2005;0.60
+Lazio;2006;0.61
+Lazio;2007;0.64
+Lazio;2008;0.63
+Lazio;2009;0.60
+Lazio;2010;0.60
+Lazio;2011;0.62
+Lazio;2012;0.64
+Lazio;2013;0.63
+Lazio;2014;0.65
+Lazio;2015;0.67
+Lazio;2016;0.69
+Abruzzo;2004;0.18
+Abruzzo;2005;0.19
+Abruzzo;2006;0.19
+Abruzzo;2007;0.20
+Abruzzo;2008;0.20
+Abruzzo;2009;0.19
+Abruzzo;2010;0.19
+Abruzzo;2011;0.20
+Abruzzo;2012;0.20
+Abruzzo;2013;0.20
+Abruzzo;2014;0.21
+Abruzzo;2015;0.22
+Abruzzo;2016;0.23
+Molise;2004;0.08
+Molise;2005;0.08
+Molise;2006;0.09
+Molise;2007;0.09
+Molise;2008;0.09
+Molise;2009;0.08
+Molise;2010;0.08
+Molise;2011;0.09
+Molise;2012;0.09
+Molise;2013;0.09
+Molise;2014;0.09
+Molise;2015;0.10
+Molise;2016;0.10
+Campania;2004;0.15
+Campania;2005;0.16
+Campania;2006;0.16
+Campania;2007;0.17
+Campania;2008;0.17
+Campania;2009;0.16
+Campania;2010;0.16
+Campania;2011;0.17
+Campania;2012;0.17
+Campania;2013;0.17
+Campania;2014;0.18
+Campania;2015;0.18
+Campania;2016;0.19
+Puglia;2004;0.13
+Puglia;2005;0.14
+Puglia;2006;0.14
+Puglia;2007;0.15
+Puglia;2008;0.15
+Puglia;2009;0.14
+Puglia;2010;0.14
+Puglia;2011;0.15
+Puglia;2012;0.15
+Puglia;2013;0.15
+Puglia;2014;0.16
+Puglia;2015;0.16
+Puglia;2016;0.17
+Basilicata;2004;0.10
+Basilicata;2005;0.10
+Basilicata;2006;0.11
+Basilicata;2007;0.11
+Basilicata;2008;0.11
+Basilicata;2009;0.10
+Basilicata;2010;0.10
+Basilicata;2011;0.11
+Basilicata;2012;0.11
+Basilicata;2013;0.11
+Basilicata;2014;0.11
+Basilicata;2015;0.12
+Basilicata;2016;0.12
+Calabria;2004;0.09
+Calabria;2005;0.09
+Calabria;2006;0.10
+Calabria;2007;0.10
+Calabria;2008;0.10
+Calabria;2009;0.09
+Calabria;2010;0.09
+Calabria;2011;0.10
+Calabria;2012;0.10
+Calabria;2013;0.10
+Calabria;2014;0.10
+Calabria;2015;0.11
+Calabria;2016;0.11
+Sicilia;2004;0.11
+Sicilia;2005;0.12
+Sicilia;2006;0.12
+Sicilia;2007;0.13
+Sicilia;2008;0.12
+Sicilia;2009;0.12
+Sicilia;2010;0.12
+Sicilia;2011;0.12
+Sicilia;2012;0.13
+Sicilia;2013;0.13
+Sicilia;2014;0.13
+Sicilia;2015;0.14
+Sicilia;2016;0.14
+Sardegna;2004;0.14
+Sardegna;2005;0.14
+Sardegna;2006;0.15
+Sardegna;2007;0.16
+Sardegna;2008;0.15
+Sardegna;2009;0.14
+Sardegna;2010;0.14
+Sardegna;2011;0.15
+Sardegna;2012;0.15
+Sardegna;2013;0.15
+Sardegna;2014;0.16
+Sardegna;2015;0.16
+Sardegna;2016;0.17
