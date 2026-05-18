@@ -1,4 +1,4 @@
-# FSD Esame 2024 — Mercato del lavoro IT
+Mercato del lavoro IT
 
 ## Avvio rapido
 
