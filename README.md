@@ -1,4 +1,4 @@
-# FSD Esame 2024
+## Mercato del lavoro IT
 
 Applicazione per la raccolta e analisi dei dati sul mercato del lavoro in Italia.
 Scarica 3 dataset pubblici da datiopen.it, normalizza i dati mancanti con interpolazione lineare e calcola 5 serie statistiche aggregate per area geografica. Tutto viene esposto tramite API REST.
