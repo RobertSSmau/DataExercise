@@ -1,4 +1,4 @@
-"""Interpolazione lineare dei dati mancanti per anno, per regione."""
+# Riempie i buchi temporali con interpolazione lineare per ogni regione.
 from __future__ import annotations
 
 from app.database import SessionLocal
@@ -6,12 +6,6 @@ from app.models import Partecipazione, Ricerca, Sopravvivenza
 
 
 def interpola_per_regione(serie: dict[int, float]) -> dict[int, tuple[float, bool]]:
-    """
-    Riceve {anno: valore} per una singola regione.
-    Ritorna {anno: (valore, interpolato_bool)}.
-    Gli anni mancanti tra due punti noti consecutivi vengono riempiti
-    con interpolazione lineare. Non si estrapolano gli estremi.
-    """
     if len(serie) < 2:
         return {a: (v, False) for a, v in serie.items()}
 
@@ -25,6 +19,7 @@ def interpola_per_regione(serie: dict[int, float]) -> dict[int, tuple[float, boo
             continue
         v0, v1 = serie[a0], serie[a1]
         passo = (v1 - v0) / gap
+        # aggiunge gli anni mancanti tra a0 e a1 con incremento lineare
         for k in range(1, gap):
             out[a0 + k] = (v0 + passo * k, True)
 

@@ -1,4 +1,4 @@
-"""Calcola e persiste le 5 serie richieste dalla commessa."""
+# Calcola le 5 serie statistiche aggregate e le salva nella tabella serie_calcolate.
 from __future__ import annotations
 
 from collections import defaultdict
@@ -10,7 +10,7 @@ from app.models import Partecipazione, Regione, Ricerca, SerieCalcolata, Sopravv
 
 
 def media_per_anno(coppie: Iterable[tuple[int, float]]) -> dict[int, float]:
-    """Media aritmetica semplice per anno (non ponderata, come da nota metodologica)."""
+    # media aritmetica semplice, non ponderata (come da nota metodologica della commessa)
     accum: dict[int, list[float]] = defaultdict(list)
     for anno, valore in coppie:
         accum[anno].append(valore)

@@ -1,3 +1,4 @@
+# Percorsi del database e URL di download dei 3 dataset pubblici.
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -7,8 +8,6 @@ class Settings:
     db_url: str = f"sqlite:///{ROOT / 'data' / 'esame.db'}"
     data_dir: Path = ROOT / "data"
 
-    # URL diretti per il download CSV da datiopen.it
-    # Se questi non funzionano, scaricare manualmente e salvare in data/
     url_partecipazione: str = (
         "http://www.datiopen.it/export/csv/"
         "Partecipazione-della-popolazione-al-mercato-del-lavoro-per-regione.csv"

@@ -1,4 +1,4 @@
-"""Mapping REGIONE -> AREA come da specifica commessa."""
+# Associa ogni regione alla sua area geografica, con gli alias per i nomi alternativi nei CSV.
 
 REGIONE_AREA: dict[str, str] = {
     "Valle d'Aosta": "Nord-ovest",
@@ -30,7 +30,7 @@ REGIONE_AREA: dict[str, str] = {
 
 AREE = ("Nord-ovest", "Nord-est", "Centro", "Sud", "Isole")
 
-# Nomi canonici (come usati nella tabella regioni)
+# I dataset usano nomi non standard; qui li normalizziamo al nome canonico del DB.
 ALIAS_TO_CANONICAL: dict[str, str] = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
     "Trentino Alto Adige": "Trentino-Alto Adige",

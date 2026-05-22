@@ -1,3 +1,4 @@
+# Endpoint per le 5 serie statistiche calcolate (partecipazione, ricerca, sopravvivenza).
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
@@ -47,7 +48,6 @@ def serie_partecipazione_aree(
     a_anno: int = Query(..., description="Anno finale"),
     db: Session = Depends(get_db),
 ):
-    """Serie 1 — Partecipazione mercato lavoro per le 5 aree geografiche."""
     _valida_range(da_anno, a_anno)
     return [
         SerieAreaOut(area=r.area, anno=r.anno, valore=r.valore)
@@ -61,7 +61,6 @@ def serie_partecipazione_nazionale(
     a_anno: int = Query(...),
     db: Session = Depends(get_db),
 ):
-    """Serie 2 — Partecipazione mercato lavoro nazionale."""
     _valida_range(da_anno, a_anno)
     return [
         SerieNazionaleOut(anno=r.anno, valore=r.valore)
@@ -75,7 +74,6 @@ def serie_ricerca_aree(
     a_anno: int = Query(...),
     db: Session = Depends(get_db),
 ):
-    """Serie 3 — Media incidenza spesa R&S per le 5 aree geografiche."""
     _valida_range(da_anno, a_anno)
     return [
         SerieAreaOut(area=r.area, anno=r.anno, valore=r.valore)
@@ -89,7 +87,6 @@ def serie_sopravvivenza_nazionale(
     a_anno: int = Query(...),
     db: Session = Depends(get_db),
 ):
-    """Serie 4 — Media tasso sopravvivenza imprese alta conoscenza nazionale."""
     _valida_range(da_anno, a_anno)
     return [
         SerieNazionaleOut(anno=r.anno, valore=r.valore)
@@ -103,7 +100,6 @@ def serie_sopravvivenza_aree(
     a_anno: int = Query(...),
     db: Session = Depends(get_db),
 ):
-    """Serie 5 — Media tasso sopravvivenza imprese alta conoscenza per le 5 aree."""
     _valida_range(da_anno, a_anno)
     return [
         SerieAreaOut(area=r.area, anno=r.anno, valore=r.valore)

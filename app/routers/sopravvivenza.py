@@ -1,3 +1,4 @@
+# GET /api/sopravvivenza, restituisce i dati grezzi filtrati per anno.
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 

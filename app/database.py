@@ -1,3 +1,4 @@
+# Configurazione SQLAlchemy: engine, sessione e dipendenza per i router.
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
@@ -15,6 +16,6 @@ Base = declarative_base()
 def get_db():
     db = SessionLocal()
     try:
-        yield db
+        yield db  # iniettato nei router tramite Depends(get_db)
     finally:
         db.close()

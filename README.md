@@ -1,41 +1,34 @@
-# FSD Esame 2024 — Mercato del lavoro IT
+# FSD Esame 2024
 
-## Avvio rapido
+Applicazione per la raccolta e analisi dei dati sul mercato del lavoro in Italia.
+Scarica 3 dataset pubblici da datiopen.it, normalizza i dati mancanti con interpolazione lineare e calcola 5 serie statistiche aggregate per area geografica. Tutto viene esposto tramite API REST.
 
-```bash
-# 1. Crea e attiva venv
+## Come si avvia
+
+Prima di tutto crea e attiva un ambiente virtuale:
+
+```
 py -3 -m venv .venv
-.\.venv\Scripts\Activate.ps1   # Windows PowerShell
-# source .venv/bin/activate    # Linux/Mac
-
-# 2. Installa dipendenze
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-
-# 3. Pipeline dati (eseguire nell'ordine)
-python scripts/1_import.py      # scarica e importa i 3 dataset da datiopen.it
-python scripts/2_normalize.py   # interpola dati mancanti
-python scripts/3_calculate.py   # calcola le 5 serie
-
-# 4. Avvia API
-python run.py                   # http://127.0.0.1:8000
 ```
 
-## Endpoint
+Poi esegui i 3 script di pipeline nell'ordine, ognuno dipende dal precedente:
 
-| Metodo | URL | Parametri |
-|--------|-----|-----------|
-| GET | `/api/partecipazione` | `da_anno`, `a_anno` |
-| GET | `/api/sopravvivenza` | `da_anno`, `a_anno` |
-| GET | `/api/ricerca` | `da_anno`, `a_anno` |
-| GET | `/api/serie/partecipazione/aree` | `da_anno`, `a_anno` |
-| GET | `/api/serie/partecipazione/nazionale` | `da_anno`, `a_anno` |
-| GET | `/api/serie/ricerca/aree` | `da_anno`, `a_anno` |
-| GET | `/api/serie/sopravvivenza/nazionale` | `da_anno`, `a_anno` |
-| GET | `/api/serie/sopravvivenza/aree` | `da_anno`, `a_anno` |
-| GET | `/docs` | Swagger UI auto-generata |
-| GET | `/` | Pagina di plotting con Chart.js |
+```
+python scripts/1_import.py
+python scripts/2_normalize.py
+python scripts/3_calculate.py
+```
+
+Infine avvia il server:
+
+```
+python run.py
+```
+
+L'API è disponibile su http://127.0.0.1:8000 e la documentazione Swagger su http://127.0.0.1:8000/docs.
 
 ## Note
 
-- Il DB è `data/esame.db` (SQLite, file singolo, zero configurazione).
-- Se il download da datiopen.it fallisce, scarica manualmente i 3 CSV e salvali in `data/` come `partecipazione.csv`, `sopravvivenza.csv`, `ricerca.csv`.
+Il database è un file SQLite in data/esame.db, non serve configurare niente. Se il download automatico da datiopen.it non funziona, scarica manualmente i CSV e salvali in data/ come partecipazione.csv, sopravvivenza.csv e ricerca.csv.

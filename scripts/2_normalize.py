@@ -1,4 +1,4 @@
-"""Script 2: normalizza i dati mancanti con interpolazione lineare temporale."""
+# Step 2 della pipeline: normalizza i dati mancanti con interpolazione lineare.
 import sys
 from pathlib import Path
 

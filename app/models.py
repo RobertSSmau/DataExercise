@@ -1,3 +1,4 @@
+# Definizione delle 5 tabelle SQLAlchemy del database.
 from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String, UniqueConstraint
 from sqlalchemy.orm import relationship
 
@@ -48,8 +49,7 @@ class SerieCalcolata(Base):
     __tablename__ = "serie_calcolate"
     __table_args__ = (UniqueConstraint("tipo_serie", "area", "anno", name="uq_serie"),)
     id = Column(Integer, primary_key=True)
-    # PART_AREA, PART_NAZ, RIC_AREA, SOPR_NAZ, SOPR_AREA
-    tipo_serie = Column(String, nullable=False, index=True)
-    area = Column(String, nullable=True, index=True)  # NULL per serie nazionali
+    tipo_serie = Column(String, nullable=False, index=True)  # es. PART_AREA, SOPR_NAZ
+    area = Column(String, nullable=True, index=True)  # None per serie nazionali
     anno = Column(Integer, nullable=False, index=True)
     valore = Column(Float, nullable=False)

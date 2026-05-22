@@ -1,4 +1,4 @@
-"""Scarica i 3 dataset da datiopen.it (o legge da cache locale) e popola il DB."""
+# Scarica i 3 CSV da datiopen.it (o li legge da cache locale) e popola il database.
 from __future__ import annotations
 
 from pathlib import Path
@@ -51,8 +51,8 @@ def download_if_missing(filename: str, url: str) -> Path:
     try:
         resp = requests.get(url, timeout=60)
         resp.raise_for_status()
-        # controlla che sia davvero un CSV e non una pagina HTML
         content = resp.content
+        # datiopen.it a volte restituisce una pagina HTML invece del CSV
         if content.lstrip()[:15].lower().startswith(b"<!doctype") or b"<html" in content[:200].lower():
             raise RuntimeError(
                 f"L'URL ha restituito una pagina HTML invece di un CSV.\n"
@@ -79,15 +79,14 @@ def seed_regioni(db) -> dict[str, int]:
 
 def _nome_canonico(raw: str) -> str | None:
     s = str(raw).strip()
-    # prova alias prima
     s = ALIAS_TO_CANONICAL.get(s, s)
-    # controlla che il nome finale sia una regione nota
     if s in REGIONE_AREA:
         return s
     return None
 
 
 def _detect_columns(df: pd.DataFrame) -> tuple[str, str, str]:
+    # i CSV di datiopen.it non hanno nomi colonna uniformi, si cerca per keyword
     lower = {c.lower().strip(): c for c in df.columns}
     col_reg = next(
         (lower[k] for k in lower if "regione" in k or "territorio" in k or "region" in k),
@@ -114,7 +113,7 @@ def _detect_columns(df: pd.DataFrame) -> tuple[str, str, str]:
 
 
 def import_csv(path: Path, ModelCls, regione_id_by_nome: dict[str, int], db) -> int:
-    # prova prima con sep=';', poi auto
+    # prova sep=';' (formato datiopen.it), fallback su rilevamento automatico
     try:
         df = pd.read_csv(path, sep=";", encoding="utf-8")
         if len(df.columns) < 3:
@@ -146,7 +145,7 @@ def import_csv(path: Path, ModelCls, regione_id_by_nome: dict[str, int], db) -> 
             )
         )
 
-    # idempotenza: cancella e reinserisci
+    # cancella e reinserisci per garantire idempotenza (script rieseguibile)
     db.query(ModelCls).delete()
     db.add_all(rows)
     db.commit()

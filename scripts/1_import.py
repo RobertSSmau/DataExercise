@@ -1,4 +1,4 @@
-"""Script 1: importa i 3 dataset pubblici da datiopen.it nel database."""
+# Step 1 della pipeline: scarica i CSV e li carica nel database.
 import sys
 from pathlib import Path
 

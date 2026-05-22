@@ -1,3 +1,4 @@
+# Punto di ingresso FastAPI: registra i router e serve la pagina statica.
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -8,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from app.database import Base, engine
 from app.routers import partecipazione, ricerca, serie, sopravvivenza
 
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)  # crea le tabelle se non esistono ancora
 
 app = FastAPI(
     title="FSD Esame 2024 — Mercato del lavoro IT",

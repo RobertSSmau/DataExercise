@@ -1,4 +1,4 @@
-"""Script 3: calcola le 5 serie statistiche richieste dalla commessa."""
+# Step 3 della pipeline: calcola le 5 serie statistiche e le salva nel database.
 import sys
 from pathlib import Path
 

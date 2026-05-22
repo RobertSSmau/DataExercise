@@ -1,3 +1,4 @@
+# Schemi Pydantic per serializzare le risposte JSON dell'API.
 from pydantic import BaseModel, ConfigDict
 
 
